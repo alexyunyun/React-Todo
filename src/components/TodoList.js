@@ -42,15 +42,18 @@ function TodoList(props) {
                 <h3 className="uncompleted-task-title">
                     待办
                 </h3>
-                {unCompletedTask}
+                <div>
+                    {unCompletedTask}
+                </div>
             </div>
             <div>
                 <h3 className="completed-task-title">
                     已完成
                 </h3>
-                {completedTask}
+                <div>
+                    {completedTask}
+                </div>
             </div>
-
         </div>
     )
 }

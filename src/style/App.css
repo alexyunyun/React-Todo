@@ -1,0 +1,11 @@
+.todo-app-container {
+    width: 50vw;
+    min-height: 50vh;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

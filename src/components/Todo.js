@@ -1,5 +1,5 @@
 import React from "react";
-import './Todo.css'
+import '../style/Todo.css'
 
 function Todo(props) {
     const todo = props.todo;
@@ -18,7 +18,10 @@ function Todo(props) {
     return (
 
         <div className="todo-item">
-            <input type="checkbox" checked={status} onChange={handleStatusChange.bind(this)}/>
+            <input type="checkbox" checked={status}
+                   onChange={handleStatusChange.bind(this)}
+                   disabled={status}
+            />
             <span className={`todo-item-text ${status ? 'done' : 'undone'}`}>{todo.task} </span>
             <button className="todo-item-delete" onClick={handleDeleteItem.bind(this, todo.id)}>X</button>
         </div>

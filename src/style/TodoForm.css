@@ -1,0 +1,27 @@
+.todo-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.todo-form .todo-add-box {
+    width: 100%;
+}
+.todo-form .todo-input {
+    width: 60%;
+    height: 30px;
+    margin-right: 20px;
+    padding: 0 5px;
+    line-height: 30px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.todo-form .todo-add-box button {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import '../style/TodoForm.css';
 function TodoForm(props) {
     const [todo, setTodo] = useState('');
 
@@ -23,10 +23,13 @@ function TodoForm(props) {
     }
 
     return (
-        <div>
+        <div className="todo-form">
             <h1>待办事项</h1>
-            <input type="text" className="todo-input" value={todo} onKeyUp={handleEnterKeyUp} onChange={handleTextChange}/>
-            <button onClick={handleAddTodo}>添加</button>
+            <div className="todo-add-box">
+                <input type="text" className="todo-input" value={todo} onKeyUp={handleEnterKeyUp} onChange={handleTextChange}/>
+                <button onClick={handleAddTodo}>添加</button>
+            </div>
+
         </div>
     )
 }
