@@ -22,6 +22,9 @@ function TodoForm(props) {
         setTodo('');
     }
 
+    function deleteCompleted() {
+        props.handleDeleteCompleted();
+    }
     return (
         <div className="todo-form">
             <h1>待办事项</h1>
@@ -29,7 +32,9 @@ function TodoForm(props) {
                 <input type="text" className="todo-input" value={todo} onKeyUp={handleEnterKeyUp} onChange={handleTextChange}/>
                 <button onClick={handleAddTodo}>添加</button>
             </div>
-
+            <div>
+                <button onClick={deleteCompleted} className="clear-completed-button">清除已完成</button>
+            </div>
         </div>
     )
 }
