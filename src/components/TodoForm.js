@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import SearchBar from "./SearchBar";
 import '../style/TodoForm.css';
 function TodoForm(props) {
     const [todo, setTodo] = useState('');
@@ -25,11 +26,22 @@ function TodoForm(props) {
     function deleteCompleted() {
         props.handleDeleteCompleted();
     }
+
+    function handleKeywordChange(keyword) {
+        props.handleKeywordChange(keyword);
+    }
     return (
         <div className="todo-form">
-            <h1>待办事项</h1>
+            <div style={{width: '100%',display: 'flex',justifyContent: 'flex-between'}}>
+                <h1 style={{display:'inline-block'}}>待办事项</h1>
+                <SearchBar handleKeywordChange={handleKeywordChange}/>
+            </div>
             <div className="todo-add-box">
-                <input type="text" className="todo-input" value={todo} onKeyUp={handleEnterKeyUp} onChange={handleTextChange}/>
+                <input type="text" className="todo-input" value={todo}
+                       onKeyUp={handleEnterKeyUp}
+                       onChange={handleTextChange}
+                        placeholder="在这里添加todo"
+                />
                 <button onClick={handleAddTodo}>添加</button>
             </div>
             <div>

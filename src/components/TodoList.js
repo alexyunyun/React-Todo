@@ -6,27 +6,36 @@ import Todo from './Todo'
 function TodoList(props) {
     const completedTask = [];
     const unCompletedTask = [];
-    props.todoData.forEach((todo) => {
-        if (todo.completed) {
-            completedTask.push(
-                <Todo
-                    key={todo.id}
-                    todo={todo}
-                    onStatusChange={onStatusChange.bind(this)}
-                    onDeleteItem={onDeleteItem.bind(this)}
-                />
-            );
-        } else {
-            unCompletedTask.push(
-                <Todo
-                    key={todo.id}
-                    todo={todo}
-                    onStatusChange={onStatusChange.bind(this)}
-                    onDeleteItem={onDeleteItem.bind(this)}
-                />
-            );
-        }
-    })
+
+    function getRenderData(todoList) {
+        todoList.forEach((todo) => {
+            if (todo.completed) {
+                completedTask.push(
+                    <Todo
+                        key={todo.id}
+                        todo={todo}
+                        onStatusChange={onStatusChange.bind(this)}
+                        onDeleteItem={onDeleteItem.bind(this)}
+                    />
+                );
+            } else {
+                unCompletedTask.push(
+                    <Todo
+                        key={todo.id}
+                        todo={todo}
+                        onStatusChange={onStatusChange.bind(this)}
+                        onDeleteItem={onDeleteItem.bind(this)}
+                    />
+                );
+            }
+        })
+    }
+
+    if (props.filteredData.length === 0) {
+        getRenderData(props.todoData);
+    } else {
+        getRenderData(props.filteredData);
+    }
 
     function onStatusChange(newTodo) {
         props.onStatusChange(newTodo);

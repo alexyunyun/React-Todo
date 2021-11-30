@@ -5,8 +5,19 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
+.todo-form .todo-search {
+    margin-left: 50%;
+    height: 30px;
+    margin-bottom: 25px;
+    justify-self: flex-end;
+    align-self: flex-end;
+
+}
 .todo-form .todo-add-box {
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 .todo-form .todo-input {
     width: 60%;
@@ -21,6 +32,7 @@
     display: inline-block;
     width: 60px;
     height: 30px;
+    margin-left: 25px;
     font-size: 18px;
     text-align: center;
     vertical-align: middle;
